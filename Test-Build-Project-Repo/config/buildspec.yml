@@ -11,4 +11,4 @@ phases:
     commands:
       - printenv
       - echo " This is Simple Buildspec file to execute a shell script and create a CF stack"
-      - bash Test-Build-Project-Repo/scripts/ec2_create.sh $ENVIRONMENT_NAME $VPC_ID $SUBNET_ID   
+      - bash Practice-Demo-on-15-12-19/Test-Build-Project-Repo/scripts/ec2_create.sh $ENVIRONMENT_NAME $VPC_ID $SUBNET_ID   
