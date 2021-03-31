@@ -37,7 +37,7 @@ echo " Start CF Deployment of EC2 Resources on $(date +'%Y-%M-%d %T %Z') with St
 aws cloudformation deploy \
     --region ${AWS_REGION} \
     --stack-name ${EC2_CF_STACK_NAME} \
-    --template-file ${EC2_CE_TEMPLATE_FILE} \
+    --template-file ${EC2_CF_TEMPLATE_FILE} \
     --parameter-overrides \
         KeyName=${EC2_KEY_NAME} \
         InstanceType=${EC2_INSTANCE_TYPE} \
