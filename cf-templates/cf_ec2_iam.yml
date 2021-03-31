@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: |
+Description: 
   This template will create a IAM Role, Launch an ec2 instance and atttach the Role to the Ec2
 Parameters:
   keyName:
