@@ -13,7 +13,7 @@ Parameters:
       - t2.small
       - t2.micro
   LatestLinuxAmiId:
-    Type: 'AWS::SSM::parameter::Value<AWS::EC2::Image::Id>'
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
     Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
   EnvironmentName:
     Description: SDLC Environmentt Value e.g. dev/qa prod.
@@ -29,7 +29,7 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      KeyName: !Ref KeyName       
+      KeyName: !Ref KeyName 
       ImageId: !Ref LatestLinuxAmiId
       InstanceType: !Ref InstanceType
       IamInstanceProfile: !Ref EC2InstanceProfile
@@ -56,7 +56,7 @@ Resources:
           Value: !Join [ "-", [ !Ref EnvironmentName, ' SSHAccess '] ]        
 
   EC2InstanceProfile:
-    Type: "AWS::IAM::InstanceProfile"
+    Type: AWS::IAM::InstanceProfile
     Properties:
       InstanceProfileName: String
       Path: /
@@ -88,7 +88,7 @@ Resources:
               Service:
                 - ec2.amazonaws.com
             Action:
-              - 'sts:AssumeRole'   
+              - 'sts:AssumeRole'    
       Path: /           
       
 Outputs:
