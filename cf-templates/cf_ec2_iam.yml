@@ -24,12 +24,7 @@ Parameters:
   SubnetId: 
     Description: Subnet Id
     Type: String         
-Metadata:
-  
-Mappings:
-  
-Conditions:
-  
+
 Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
