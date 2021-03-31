@@ -68,7 +68,7 @@ Resources:
     Properties:
       PolicyName: ListS3BucketsPolicy
       PolicyDocument:
-        statement:
+        Statement:
           - Effect: Allow
             Action:
               - 's3:List*'
@@ -87,6 +87,8 @@ Resources:
             Principal:  
               Service:
                 - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'   
       Path: /           
       
 Outputs:
