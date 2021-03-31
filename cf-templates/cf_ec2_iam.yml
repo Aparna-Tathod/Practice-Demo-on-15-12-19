@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: 
   This template will create a IAM Role, Launch an ec2 instance and atttach the Role to the Ec2
 Parameters:
-  keyName:
+  KeyName:
     Description: EC2 insttance SSH key
     Type: String
   InstanceType:
@@ -13,9 +13,9 @@ Parameters:
       - t2.small
       - t2.micro
   LatestLinuxAmiId:
-    type: 'AWS::SSM::parametter::Value<AWS::EC2::Image::Id>'
+    Type: 'AWS::SSM::parametter::Value<AWS::EC2::Image::Id>'
     Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
-  EnveronmentName:
+  EnvironmentName:
     Description: SDLC Environmentt Value e.g. dev/qa prod.
     Type: String
   VpcId: 
@@ -29,8 +29,7 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      KeyName: !Ref KeyName 
-      DisableApiTermination: 
+      KeyName: !Ref KeyName       
       ImageId: !Ref LatestLinuxAmiId
       InstanceType: !Ref InstanceType
       IamInstanceProfile: !Ref EC2InstanceProfile
