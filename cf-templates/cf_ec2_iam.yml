@@ -13,7 +13,7 @@ Parameters:
       - t2.small
       - t2.micro
   LatestLinuxAmiId:
-    Type: 'AWS::SSM::parametter::Value<AWS::EC2::Image::Id>'
+    Type: 'AWS::SSM::parameter::Value<AWS::EC2::Image::Id>'
     Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
   EnvironmentName:
     Description: SDLC Environmentt Value e.g. dev/qa prod.
