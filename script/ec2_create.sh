@@ -21,7 +21,7 @@ case "$ENVIRONMENT_NAME" in
 esac
 
 EC2_CF_STACK_NAME="${ENVIRONMENT_NAME}-ec2-stack"
-EC2_CF_TEMPLATE_FILE="cf_templates/cf_ec2_iam.yml"
+EC2_CF_TEMPLATE_FILE="cf-templates/cf_ec2_iam.yml"
 ls -alR
 
 echo "ENVIRONMENT_NAME is $ENVIRONMENT_NAME "
