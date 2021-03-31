@@ -8,23 +8,23 @@ SUBNET_ID=$3
 case "$ENVIRONMENT_NAME" in
   "dev")
       EC2_KEY_NAME="amazon-linux-key"
-      EC2_INSTTANCE_TYPE="t2.micro"
+      EC2_INSTANCE_TYPE="t2.micro"
       ;;
   "qa")
     EC2_KEY_NAME="amazon-linux-key"
-    EC2_INSTTANCE_TYPE="t2.micro"
+    EC2_INSTANCE_TYPE="t2.micro"
       ;;
   "prod")
     EC2_KEY_NAME="amazon-linux-key"
-    EC2_INSTTANCE_TYPE="t2.small"
+    EC2_INSTANCE_TYPE="t2.small"
     ;;
 esac
 
-EC2_CF_STACK_NAME="${ENVIRONMENTT_NAME}-ec2-stack"
+EC2_CF_STACK_NAME="${ENVIRONMENT_NAME}-ec2-stack"
 EC2_CF_TEMPLATE_FILE="cf_templates/cf_ec2_iam.yml"
 ls -alR
 
-echo "ENVIRONMENTT_NAME is $ENVIRONMENTT_NAME "
+echo "ENVIRONMENT_NAME is $ENVIRONMENT_NAME "
 echo " VPC_ID is $VPC_ID "
 echo " SUBNET_ID is $SUBNET_ID "
 echo " EC2_KEY_NAME is $EC2_KEY_NAME "
@@ -39,7 +39,7 @@ aws cloudformation deploy \
     --stack-name ${EC2_CF_STACK_NAME} \
     --template-file ${EC2_CE_TEMPLATE_FILE} \
     --parameter-overrides \
-        KeyName=${EC2_KEYY_NAME} \
+        KeyName=${EC2_KEY_NAME} \
         InstanceType=${EC2_INSTANCE_TYPE} \
         EnvironmentName=${ENVIRONMENT_NAME} \
         VpcId=${VPC_ID} \
