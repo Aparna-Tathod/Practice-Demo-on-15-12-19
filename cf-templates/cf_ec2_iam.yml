@@ -40,7 +40,7 @@ Resources:
       InstanceType: !Ref InstanceType
       IamInstanceProfile: !Ref EC2InstanceProfile
       SubnetId: !Ref SubnetId
-      SecurityGroupIds:e
+      SecurityGroupIds:
         - !Ref SSHAccessSG
       Tags:
         - Key: Name
